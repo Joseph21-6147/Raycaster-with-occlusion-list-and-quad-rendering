@@ -998,7 +998,7 @@ public:
                 nClipRght = rec.rght;
             }
             // 4b. Check if a merge with one or more elements to the right is needed
-            while ((*iterLeft).rght + 1 >= (*iterRght).left && iterRght != lst.end()) {
+            while (iterRght != lst.end() && (*iterLeft).rght + 1 >= (*iterRght).left) {
 
                 // 4c. there is overlap (or adjacency): EXTEND the LEFT element, ...
                 (*iterLeft).left = std::min( (*iterLeft).left, (*iterRght).left );
